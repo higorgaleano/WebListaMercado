@@ -1,0 +1,44 @@
+﻿@model ComprasModel
+@{
+    ViewData["Title"] = "Editar Item";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Editar Item</h1>
+
+</div>
+
+<form asp-controller="Compras" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group mb-3">
+        <label for="Nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do item">
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="">Marca</label>
+        <input type="text" asp-for="Marca" class="form-control" placeholder="Digite a marca do item">
+        @Html.ValidationMessageFor(x => x.Marca)
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="quantidade">Quantidade</label>
+        <input type="text" asp-for="Quantidade" class="form-control" placeholder="Digite a quantidade do item">
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="detalhes">Detalhes</label>
+        <input type="text" asp-for="Detalhes" class="form-control" placeholder="Digite os detalhes do item">
+        @Html.ValidationMessageFor(x => x.Detalhes)
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary w-100">Alterar</button>
+        <a role="button" class="btn btn-secondary w-100" asp-controller="Compras" asp-action="Index">Voltar</a>
+    </div>
+</form>
+
+

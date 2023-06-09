@@ -1,0 +1,49 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.image-container-principal {
+    perspective: 800px; /* Define a perspectiva do contêiner */
+}
+
+.image-container-principal img {
+    width: 600px;
+    height: 340px;
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Adiciona a sombra */
+}
+
+.image-container-principal:hover img {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Aumenta a sombra quando o mouse está sobre a imagem */
+    transform: scale(1.1); /* Aumenta a escala da imagem para criar a sensação de aproximação */
+}
+
+
+.field-validation-error {
+    color: #e01d1d;
+}
+
+.close-alert {
+    position: absolute;
+    right: -10px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 31px;
+}

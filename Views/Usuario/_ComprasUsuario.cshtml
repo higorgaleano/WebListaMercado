@@ -1,0 +1,32 @@
+﻿@model List<ComprasModel>
+
+<table id="table-compras-usuario" class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Detalhes</th>
+        </tr>
+    </thead>
+    <tbody>
+    @if(Model != null && Model.Any())
+    {
+        foreach (var item in Model)
+        {
+        <tr>
+            <td scope="row">@item.Id</td>
+            <td>@item.Nome</td>
+            <td>@item.Marca</td>
+            <td>@item.Quantidade</td>
+            <td>@item.Detalhes</td> 
+        </tr>
+        }
+    }
+    else
+    {
+        <tr class="add"><td valign="top" colspan="5">Nenhum item encontrado</td></tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+﻿@using WebListaMercado.Enums
+@model UsuarioModel
+@{
+    ViewData["Title"] = "Editar usuário";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4"></h1>
+
+</div>
+
+<form asp-controller="Usuario" asp-action="Alterar" method="post">
+    
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group mb-3">
+        <label for="Nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do usuário" />
+        @Html.ValidationMessageFor(x => x.Nome)
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Email">Email</label>
+        <input type="email" asp-for="Email" class="form-control" placeholder="Digite o email do usuário" />
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Login">Login</label>
+        <input type="text" asp-for="Login" class="form-control" placeholder="Digite o login do usuário" />
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Perfil">Perfil</label>
+        <select asp-for="Perfil" class="form-control">
+            <option value="">Selecione</option>
+            <option value="@PerfilEnum.Admin">Administrador</option>
+            <option value="@PerfilEnum.Padrao">Padrão</option>
+        </select>
+        @Html.ValidationMessageFor(x => x.Perfil)
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary w-100">Alterar</button>
+        <a role="button" class="btn btn-secondary w-100" asp-controller="Usuario" asp-action="Index">Voltar</a>
+    </div>
+</form>
